@@ -1,0 +1,240 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+}
+
+body {
+    background: #0e0e10;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* =========================
+   INTRO ANIMATION (MEHRAJ)
+========================= */
+.intro {
+    position: fixed;
+    inset: 0;
+    background: #0e0e10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeOut 2.5s ease forwards;
+    animation-delay: 2.5s;
+}
+
+.intro h1 {
+    font-size: 60px;
+    letter-spacing: 12px;
+    opacity: 0;
+    animation: logoReveal 2s ease forwards;
+    color: #ffffff;
+}
+
+@keyframes logoReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(20, 20, 25, 0.6);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* glowing name effect */
+.glow {
+    color: #fff;
+    text-shadow:
+        0 0 5px #ff4d4d,
+        0 0 10px #ff4d4d,
+        0 0 20px #ff1a1a,
+        0 0 40px #ff1a1a;
+    animation: glowPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 10px #ff4d4d;
+    }
+    50% {
+        text-shadow: 0 0 25px #ff1a1a;
+    }
+}
+
+.navbar nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.navbar nav a:hover {
+    color: white;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+/* typing animation */
+.typing {
+    font-size: 20px;
+    color: #aaa;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(40) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* =========================
+   RESUME BUTTON
+========================= */
+.resume-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    border: 1px solid #fff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+    padding: 120px 60px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   GRID SYSTEM
+========================= */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 0 30px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+}

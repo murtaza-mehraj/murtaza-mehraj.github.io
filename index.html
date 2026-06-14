@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Murtaza Mehraj | Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Murtaza Mehraj | Founder Page</title>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+body {
+    background: #0e0e10;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   LOGO INTRO ANIMATION
+========================= */
+.intro {
+    position: fixed;
+    inset: 0;
+    background: #0e0e10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeOut 2.5s ease forwards;
+    animation-delay: 2.5s;
+}
+
+.intro h1 {
+    font-size: 50px;
+    letter-spacing: 10px;
+    opacity: 0;
+    animation: logoReveal 2s ease forwards;
+}
+
+@keyframes logoReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(20,20,25,0.6);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+/* glowing name effect */
+.glow {
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #ff4d4d,
+        0 0 20px #ff4d4d,
+        0 0 40px #ff1a1a;
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { text-shadow: 0 0 10px #ff4d4d; }
+    50% { text-shadow: 0 0 25px #ff1a1a; }
+}
+
+.navbar nav a {
+    margin-left: 20px;
+    cursor: pointer;
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: white;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.typing {
+    font-size: 20px;
+    color: #aaa;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(40) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* =========================
+   RESUME BUTTON
+========================= */
+.resume-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    border: 1px solid #fff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+    padding: 120px 60px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 12px;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.08);
+}
+
+/* =========================
+   GRID
+========================= */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 40px; }
+    .grid { grid-template-columns: 1fr; }
+    .navbar { flex-direction: column; gap: 10px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- INTRO LOGO -->
+<div class="intro">
+    <h1>MEHRAJ</h1>
+</div>
+
+<!-- NAV -->
+<header class="navbar">
+    <div class="logo glow">MURTAZA MEHRAJ</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#hobbies">Hobbies</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Hi, I'm Murtaza Mehraj</h1>
+
+    <div class="typing">
+        Humanities Student • Builder • AI Explorer • Curiosity Engineer
+    </div>
+
+    <!-- RESUME DOWNLOAD -->
+    <a class="resume-btn" href="#" download>
+        Download Resume
+    </a>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h2>About Me</h2>
+
+    <div class="grid">
+        <div class="card">📍 India</div>
+        <div class="card">🎓 Class 11 Humanities Student</div>
+    </div>
+
+    <div class="card">
+        I explore AI, systems, politics, and human thinking through building and curiosity-driven learning.
+    </div>
+
+    <div class="card">
+        Mission: Make learning addictive again through curiosity, creation, and experimentation.
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="card">⚡ Solar vs Grid Power Detection System</div>
+    <div class="card">🌋 Geography Volcano Project</div>
+    <div class="card">🏛 Youth Parliament & Debate Competitions</div>
+    <div class="card">🤖 AI Learning Experiments</div>
+</section>
+
+<!-- HOBBIES -->
+<section id="hobbies" class="section">
+    <h2>Hobbies</h2>
+
+    <div class="card">📖 Reading ideas</div>
+    <div class="card">💻 Building websites</div>
+    <div class="card">🧠 AI & CS learning</div>
+    <div class="card">🌍 Humanities & society studies</div>
+</section>
+
+<script>
+
+// scroll animation
+const sections = document.querySelectorAll(".section");
+
+function reveal() {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            sec.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", reveal);
+reveal();
+
+</script>
+
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
