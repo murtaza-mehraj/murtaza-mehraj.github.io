@@ -1,328 +1,176 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Murtaza Mehraj | Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Murtaza Mehraj | Founder Page</title>
-
-<style>
-
-/* =========================
-   GLOBAL
-========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-}
-
-body {
-    background: #0e0e10;
-    color: white;
-    overflow-x: hidden;
-}
-
-/* =========================
-   LOGO INTRO ANIMATION
-========================= */
-.intro {
-    position: fixed;
-    inset: 0;
-    background: #0e0e10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    animation: fadeOut 2.5s ease forwards;
-    animation-delay: 2.5s;
-}
-
-.intro h1 {
-    font-size: 50px;
-    letter-spacing: 10px;
-    opacity: 0;
-    animation: logoReveal 2s ease forwards;
-}
-
-@keyframes logoReveal {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-        filter: blur(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-        filter: blur(0);
-    }
-}
-
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-/* =========================
-   NAVBAR
-========================= */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(20,20,25,0.6);
-    backdrop-filter: blur(12px);
-    z-index: 100;
-}
-
-.logo {
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #fff;
-}
-
-/* glowing name effect */
-.glow {
-    text-shadow:
-        0 0 5px #fff,
-        0 0 10px #ff4d4d,
-        0 0 20px #ff4d4d,
-        0 0 40px #ff1a1a;
-    animation: glowPulse 2s infinite;
-}
-
-@keyframes glowPulse {
-    0%, 100% { text-shadow: 0 0 10px #ff4d4d; }
-    50% { text-shadow: 0 0 25px #ff1a1a; }
-}
-
-.navbar nav a {
-    margin-left: 20px;
-    cursor: pointer;
-    color: #aaa;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.navbar nav a:hover {
-    color: white;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 60px;
-}
-
-.hero h1 {
-    font-size: 64px;
-    margin-bottom: 20px;
-}
-
-.typing {
-    font-size: 20px;
-    color: #aaa;
-    border-right: 2px solid white;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation: typing 3s steps(40) forwards, blink 0.7s infinite;
-}
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-/* =========================
-   RESUME BUTTON
-========================= */
-.resume-btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 20px;
-    border: 1px solid #fff;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.resume-btn:hover {
-    background: white;
-    color: black;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-.section {
-    padding: 120px 60px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s;
-}
-
-.section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* =========================
-   CARDS
-========================= */
-.card {
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 12px;
-    transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.08);
-}
-
-/* =========================
-   GRID
-========================= */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 40px; }
-    .grid { grid-template-columns: 1fr; }
-    .navbar { flex-direction: column; gap: 10px; }
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- INTRO LOGO -->
-<div class="intro">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Murtaza Mehraj | Builder, Researcher & Systems Thinker</title><meta name="description" content="Personal website of Murtaza Mehraj — exploring technology, artificial intelligence, economics, governance, and human behavior."><link rel="stylesheet" href="style.css">
+</head><body><!-- INTRO --><div class="intro">
     <h1>MEHRAJ</h1>
+</div><!-- NAVIGATION --><header class="navbar"><div class="logo glow">
+    MURTAZA MEHRAJ
 </div>
 
-<!-- NAV -->
-<header class="navbar">
-    <div class="logo glow">MURTAZA MEHRAJ</div>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#hobbies">Hobbies</a>
-    </nav>
-</header>
+<nav>
+    <a href="#about">About</a>
+    <a href="#projects">Work</a>
+    <a href="#ideas">Ideas</a>
+    <a href="#philosophy">Philosophy</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-<!-- HERO -->
-<section class="hero">
-    <h1>Hi, I'm Murtaza Mehraj</h1>
+</header><!-- HERO --><section class="hero"><h1>
+    Building Systems.<br>
+    Understanding People.<br>
+    Exploring The Future.
+</h1>
 
-    <div class="typing">
-        Humanities Student • Builder • AI Explorer • Curiosity Engineer
-    </div>
+<p class="hero-subtitle">
+    Creator of Taqweem • AI Explorer • Builder • Systems Thinker
+</p>
 
-    <!-- RESUME DOWNLOAD -->
-    <a class="resume-btn" href="#" download>
-        Download Resume
-    </a>
-</section>
+<div class="typing" id="typing">
+    Technology • Economics • Governance • Human Behavior
+</div>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-    <h2>About Me</h2>
+<a href="#" class="resume-btn">
+    View Resume
+</a>
 
-    <div class="grid">
-        <div class="card">📍 India</div>
-        <div class="card">🎓 Class 11 Humanities Student</div>
+</section><!-- ABOUT --><section id="about" class="section"><h2>About</h2>
+
+<div class="card">
+
+    I am an independent learner exploring the intersection of technology,
+    economics, governance, and human behavior.
+
+    My interests span artificial intelligence, software development,
+    decision making, institutions, and the systems that shape society.
+
+</div>
+
+<div class="card">
+
+    I enjoy connecting ideas across disciplines and transforming
+    curiosity into practical projects, experiments, and digital products.
+
+</div>
+
+</section><!-- PROJECTS --><section id="projects" class="section"><h2>Selected Work</h2>
+
+<div class="grid">
+
+    <div class="card">
+        <h3>🕌 Taqweem</h3>
+        <p>
+            A modern Hijri calendar initiative designed to make Islamic
+            dates, events, and timekeeping more accessible in a digital world.
+        </p>
     </div>
 
     <div class="card">
-        I explore AI, systems, politics, and human thinking through building and curiosity-driven learning.
+        <h3>💧 Water Awareness</h3>
+        <p>
+            An educational platform focused on sustainability,
+            water conservation, and public awareness.
+        </p>
     </div>
 
     <div class="card">
-        Mission: Make learning addictive again through curiosity, creation, and experimentation.
+        <h3>⚡ Solar vs Grid Detection</h3>
+        <p>
+            A project exploring power source identification and monitoring.
+        </p>
     </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section">
-    <h2>Projects</h2>
+    <div class="card">
+        <h3>🤖 AI Experiments</h3>
+        <p>
+            Practical experiments exploring AI tools, automation,
+            and human-computer interaction.
+        </p>
+    </div>
 
-    <div class="card">⚡ Solar vs Grid Power Detection System</div>
-    <div class="card">🌋 Geography Volcano Project</div>
-    <div class="card">🏛 Youth Parliament & Debate Competitions</div>
-    <div class="card">🤖 AI Learning Experiments</div>
-</section>
+</div>
 
-<!-- HOBBIES -->
-<section id="hobbies" class="section">
-    <h2>Hobbies</h2>
+</section><!-- IDEAS --><section id="ideas" class="section"><h2>Ideas I'm Exploring</h2>
 
-    <div class="card">📖 Reading ideas</div>
-    <div class="card">💻 Building websites</div>
-    <div class="card">🧠 AI & CS learning</div>
-    <div class="card">🌍 Humanities & society studies</div>
-</section>
+<div class="grid">
 
-<script>
+    <div class="card">
+        Artificial Intelligence & Human Decision Making
+    </div>
 
-// scroll animation
-const sections = document.querySelectorAll(".section");
+    <div class="card">
+        Behavioral Economics
+    </div>
 
-function reveal() {
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-            sec.classList.add("show");
-        }
-    });
-}
+    <div class="card">
+        Learning Systems & Education
+    </div>
 
-window.addEventListener("scroll", reveal);
-reveal();
+    <div class="card">
+        Technology & Governance
+    </div>
 
-</script>
+    <div class="card">
+        Digital Institutions
+    </div>
 
-</body>
-</html>
-    <script  src="./script.js"></script>
+    <div class="card">
+        Future Societies
+    </div>
 
-  </body>
-  
-</html>
+</div>
+
+</section><!-- PHILOSOPHY --><section id="philosophy" class="section"><h2>Philosophy</h2>
+
+<div class="card">
+
+    Technology is not merely software.
+
+    It is a lens through which we understand incentives,
+    institutions, and human behavior.
+
+    The most powerful ideas emerge when disciplines collide.
+
+</div>
+
+</section><!-- MANIFESTO --><section class="section"><h2>Manifesto</h2>
+
+<div class="card">
+
+    I believe technology is more than code.
+
+    It is a tool for understanding systems,
+    expanding human potential,
+    and creating opportunities that were previously impossible.
+
+    Learn relentlessly.
+
+    Build thoughtfully.
+
+    Share openly.
+
+    Ask better questions.
+
+</div>
+
+</section><!-- QUOTE --><section class="section"><div class="quote">
+
+    “The future belongs to people who can connect ideas across disciplines.”
+
+</div>
+
+</section><!-- CONTACT --><section id="contact" class="section"><h2>Let's Connect</h2>
+
+<div class="card">
+
+    Interested in technology, AI, economics,
+    governance, learning systems, or ambitious projects?
+
+    Let's talk.
+
+</div>
+
+</section><!-- FOOTER --><footer>© 2026 Murtaza Mehraj
+
+</footer><script src="script.js"></script></body>
+    </html>
