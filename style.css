@@ -1,240 +1,362 @@
-/* =========================
-   GLOBAL RESET
-========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-}
+    /* ==========================================
+MURTAZA MEHRAJ — PREMIUM PORTFOLIO CSS
+Minimal • Philosophical • Modern
+========================================== */
 
-body {
-    background: #0e0e10;
-    color: #ffffff;
-    overflow-x: hidden;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* =========================
-   INTRO ANIMATION (MEHRAJ)
-========================= */
-.intro {
-    position: fixed;
-    inset: 0;
-    background: #0e0e10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    animation: fadeOut 2.5s ease forwards;
-    animation-delay: 2.5s;
-}
-
-.intro h1 {
-    font-size: 60px;
-    letter-spacing: 12px;
-    opacity: 0;
-    animation: logoReveal 2s ease forwards;
-    color: #ffffff;
-}
-
-@keyframes logoReveal {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-        filter: blur(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-        filter: blur(0);
-    }
-}
-
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
+:root{
+--bg:#09090b;
+--bg-secondary:#111827;
+--text:#f8fafc;
+--muted:#94a3b8;
+--accent:#7dd3fc;
+--border:rgba(255,255,255,.08);
+--card:rgba(255,255,255,.04);
 }
 
 /* =========================
-   NAVBAR
+RESET
 ========================= */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(20, 20, 25, 0.6);
-    backdrop-filter: blur(12px);
-    z-index: 100;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
-.logo {
-    font-weight: bold;
-    letter-spacing: 2px;
+html{
+scroll-behavior:smooth;
 }
 
-/* glowing name effect */
-.glow {
-    color: #fff;
-    text-shadow:
-        0 0 5px #ff4d4d,
-        0 0 10px #ff4d4d,
-        0 0 20px #ff1a1a,
-        0 0 40px #ff1a1a;
-    animation: glowPulse 2.5s infinite ease-in-out;
-}
-
-@keyframes glowPulse {
-    0%, 100% {
-        text-shadow: 0 0 10px #ff4d4d;
-    }
-    50% {
-        text-shadow: 0 0 25px #ff1a1a;
-    }
-}
-
-.navbar nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #aaa;
-    transition: 0.3s;
-    font-size: 14px;
-}
-
-.navbar nav a:hover {
-    color: white;
+body{
+font-family:'Inter',sans-serif;
+background:
+radial-gradient(circle at top left,
+#111827,
+#09090b 60%);
+color:var(--text);
+overflow-x:hidden;
+line-height:1.8;
 }
 
 /* =========================
-   HERO SECTION
+SCROLLBAR
 ========================= */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 60px;
+
+::-webkit-scrollbar{
+width:8px;
 }
 
-.hero h1 {
-    font-size: 64px;
-    margin-bottom: 20px;
-}
-
-/* typing animation */
-.typing {
-    font-size: 20px;
-    color: #aaa;
-    border-right: 2px solid white;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation: typing 3s steps(40) forwards, blink 0.7s infinite;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
+::-webkit-scrollbar-thumb{
+background:rgba(255,255,255,.15);
+border-radius:10px;
 }
 
 /* =========================
-   RESUME BUTTON
+INTRO
 ========================= */
-.resume-btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 20px;
-    border: 1px solid #fff;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
+
+.intro{
+position:fixed;
+inset:0;
+background:#09090b;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:fadeOut 1.5s ease forwards;
+animation-delay:2s;
 }
 
-.resume-btn:hover {
-    background: white;
-    color: black;
+.intro h1{
+font-size:5rem;
+font-weight:800;
+letter-spacing:10px;
+background:linear-gradient(
+90deg,
+#ffffff,
+#7dd3fc
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+@keyframes fadeOut{
+to{
+opacity:0;
+visibility:hidden;
+}
 }
 
 /* =========================
-   SECTIONS
+NAVBAR
 ========================= */
-.section {
-    padding: 120px 60px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s ease;
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(10,10,10,.55);
+backdrop-filter:blur(20px);
+border-bottom:1px solid var(--border);
+z-index:1000;
 }
 
-.section.show {
-    opacity: 1;
-    transform: translateY(0);
+.logo{
+font-weight:800;
+letter-spacing:2px;
+font-size:1rem;
+}
+
+.glow{
+background:linear-gradient(
+90deg,
+#ffffff,
+#7dd3fc
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.navbar nav{
+display:flex;
+gap:30px;
+}
+
+.navbar nav a{
+text-decoration:none;
+color:var(--muted);
+transition:.3s;
+font-size:.95rem;
+}
+
+.navbar nav a:hover{
+color:var(--text);
 }
 
 /* =========================
-   GRID SYSTEM
+HERO
 ========================= */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:0 8%;
+}
+
+.hero h1{
+font-size:clamp(3rem,8vw,7rem);
+line-height:1;
+max-width:900px;
+font-weight:800;
+
+background:linear-gradient(
+90deg,
+#ffffff,
+#7dd3fc
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero-subtitle{
+margin-top:25px;
+font-size:1.15rem;
+color:var(--muted);
+}
+
+.typing{
+margin-top:20px;
+color:var(--accent);
+font-size:1rem;
+letter-spacing:1px;
+}
+
+.resume-btn{
+margin-top:35px;
+width:max-content;
+padding:14px 24px;
+border-radius:14px;
+text-decoration:none;
+color:white;
+border:1px solid var(--border);
+transition:.3s;
+}
+
+.resume-btn:hover{
+transform:translateY(-3px);
+background:white;
+color:black;
 }
 
 /* =========================
-   CARDS
+SECTION
 ========================= */
-.card {
-    background: rgba(255,255,255,0.05);
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s ease;
+
+.section{
+padding:120px 8%;
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.08);
+.section.show{
+opacity:1;
+transform:translateY(0);
 }
 
-/* =========================
-   HEADINGS
-========================= */
-h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+.section h2{
+font-size:2rem;
+margin-bottom:40px;
+font-weight:700;
 }
 
 /* =========================
-   MOBILE RESPONSIVE
+GRID
 ========================= */
-@media (max-width: 768px) {
 
-    .hero {
-        padding: 0 30px;
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
 
-    .hero h1 {
-        font-size: 40px;
-    }
+/* =========================
+CARDS
+========================= */
 
-    .grid {
-        grid-template-columns: 1fr;
-    }
+.card{
+background:var(--card);
+backdrop-filter:blur(20px);
 
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
-        padding: 15px 20px;
-    }
+border:1px solid var(--border);
+
+border-radius:24px;
+
+padding:28px;
+
+transition:.35s ease;
+
+}
+
+.card:hover{
+transform:translateY(-8px);
+
+border-color:
+rgba(125,211,252,.35);
+
+box-shadow:
+0 10px 40px
+rgba(125,211,252,.12);
+
+}
+
+/* =========================
+QUOTE
+========================= */
+
+.quote{
+font-size:1.5rem;
+text-align:center;
+max-width:800px;
+margin:auto;
+color:#dbeafe;
+font-style:italic;
+}
+
+/* =========================
+MANIFESTO
+========================= */
+
+.manifesto{
+max-width:900px;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+padding:60px 8%;
+border-top:1px solid var(--border);
+color:var(--muted);
+text-align:center;
+}
+
+/* =========================
+ANIMATIONS
+========================= */
+
+.fade-up{
+opacity:0;
+transform:translateY(30px);
+}
+
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-10px);
+}
+100%{
+transform:translateY(0);
+}
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:900px){
+
+.navbar{
+    padding:18px 6%;
+}
+
+.navbar nav{
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.hero{
+    padding:0 6%;
+}
+
+.section{
+    padding:90px 6%;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero-subtitle{
+    font-size:1rem;
+}
+
+.card{
+    padding:22px;
+}
+
 }
